@@ -34,8 +34,11 @@
     }
   }
 
+  var src = function (f) { return 'assets/img/' + f; };
+
   var divider = function (kicker, title, sub, bg) {
-    return '<div class="pg pg--divider" style="background-image:linear-gradient(rgba(14,13,11,.66),rgba(14,13,11,.78)),url(\'assets/img/' + bg + '\')">' +
+    return '<div class="pg pg--divider">' +
+      '<img class="pg__bg" src="' + src(bg) + '" alt="" loading="lazy">' +
       '<span class="pg__kicker">' + kicker + '</span>' +
       '<h2 class="pg__big">' + title + '</h2>' +
       '<p class="pg__sub">' + sub + '</p>' +
@@ -44,7 +47,8 @@
 
   var material = function (img, family, name, note, body, spec) {
     return '<div class="pg pg--mat">' +
-      '<div class="pg__mfig" style="background-image:url(\'assets/img/' + img + '\')">' +
+      '<div class="pg__mfig">' +
+        '<img src="' + src(img) + '" alt="' + family + ' ' + name + '" loading="lazy">' +
         '<span class="pg__ftag">' + family + '</span></div>' +
       '<div class="pg__mbody">' +
         '<span class="pg__kicker">' + note + '</span>' +
@@ -63,7 +67,8 @@
   };
 
   var photo = function (img, caption) {
-    return '<div class="pg pg--photo" style="background-image:url(\'assets/img/' + img + '\')">' +
+    return '<div class="pg pg--photo">' +
+      '<img class="pg__bg" src="' + src(img) + '" alt="" loading="lazy">' +
       (caption ? '<p class="pg__cap">' + caption + '</p>' : '') + '</div>';
   };
 
@@ -101,45 +106,45 @@
 
     /* ---- GRANITO ---- */
     divider('02', 'Granito', 'La piedra más resistente a rayones y calor, y casi nada porosa. La preferida para el mesón de cocina que se usa a diario, durante años, sin miramientos.', 'k-piedra-negra.jpg'),
-    material('card-granito-san-gabriel.jpg', 'Granito', 'Negro San Gabriel', 'Negro · cristales que destellan',
+    material('k-piedra-negra.jpg', 'Granito', 'Negro San Gabriel', 'Negro · cristales que destellan',
       'Granito ecuatoriano de fondo negro con cristales que brillan al girar la luz. Durísimo, resistente al calor directo y a los rayones, prácticamente no absorbe líquidos. Es el mesón que se usa sin miedo cada día y sigue igual con los años.',
       'Acabado pulido o flameado · Plancha 2–3 cm · Mesones de cocina, barras'),
-    material('card-granito-colonial-white.jpg', 'Granito', 'Colonial White', 'Fondo claro · granos grises y granates',
+    material('k-cocina-clasica.jpg', 'Granito', 'Colonial White', 'Fondo claro · granos grises y granates',
       'Fondo luminoso salpicado de granos grises y granates, con movimiento parejo y sin sorpresas de plancha a plancha. Combina con madera, con blanco y con acero. Un clásico noble para quien quiere granito en clave clara.',
       'Acabado pulido · Plancha 2–3 cm · Mesones, islas, mesones de exterior'),
-    material('card-granito-azul-platino.jpg', 'Granito', 'Azul Platino', 'Oscuro · reflejos azulados',
+    material('k-terrazo-azul.jpg', 'Granito', 'Azul Platino', 'Oscuro · reflejos azulados',
       'Oscuro, con reflejos azules que aparecen y desaparecen según la luz. Es el granito de las cocinas de autor: presencia, exclusividad y la resistencia de siempre.',
       'Acabado pulido · Plancha 2–3 cm · Mesones e islas de cocina'),
 
-    photo('k-cocina-clasica.jpg', 'Cocina clásica con mesón de piedra oscura — Tumbaco.'),
+    photo('k-marmol-blanco.jpg', 'Mesón y salpicadero en mármol blanco — residencia en Quito.'),
 
     /* ---- CUARZO ---- */
     divider('03', 'Cuarzo', 'Cuarzo de ingeniería: la estética de la piedra natural con superficie no porosa, veta consistente y cero mantenimiento. No necesita sellado.', 'k-terrazo-azul.jpg'),
-    material('card-cuarzo-calacatta.jpg', 'Cuarzo', 'Calacatta', 'Blanco · veta gris consistente',
+    material('foto-cocina-marmol-dorado.jpg', 'Cuarzo', 'Calacatta', 'Blanco · veta gris consistente',
       'La estética del mármol Calacatta sin ninguna de sus exigencias. No es poroso: no se mancha con vino, café ni cítricos y no lleva sellado. La veta es pareja de plancha a plancha, así que el proyecto se planifica sin sorpresas.',
       'Acabado pulido · Plancha 2 cm · Mesones de cocina y baño'),
-    material('card-cuarzo-beige.jpg', 'Cuarzo', 'Beige', 'Beige cálido · textura uniforme',
+    material('k-gris-madera.jpg', 'Cuarzo', 'Beige', 'Beige cálido · textura uniforme',
       'Beige cálido, textura homogénea, cero drama. La base neutra que deja hablar a la madera y al resto de la cocina, con la misma resistencia y facilidad de cualquier cuarzo.',
       'Acabado pulido · Plancha 2 cm · Mesones, islas, revestimientos'),
 
     /* ---- PORCELANATO ---- */
-    divider('04', 'Porcelanato gran formato', 'Placas de hasta 160 × 320 cm, livianas y estables, con juntas mínimas y mantenimiento nulo. Sirven para piso, pared y fachada con la misma pieza.', 'p-piso-marmol.jpg'),
-    material('card-porcelanato-carrara.jpg', 'Porcelanato', 'Carrara', 'Look mármol · gran formato',
+    divider('04', 'Porcelanato gran formato', 'Placas de hasta 160 × 320 cm, livianas y estables, con juntas mínimas y mantenimiento nulo. Sirven para piso, pared y fachada con la misma pieza.', 'k-marmol-blanco.jpg'),
+    material('k-marmol-blanco.jpg', 'Porcelanato', 'Carrara', 'Look mármol · gran formato',
       'Reproduce el mármol Carrara en placas enormes con juntas casi invisibles. Liviano, estable y sin mantenimiento. La misma pieza resuelve el piso, la pared del baño y la fachada ventilada.',
       'Formato hasta 160×320 cm · 6–12 mm · Pisos, paredes, fachadas'),
-    material('card-porcelanato-cemento.jpg', 'Porcelanato', 'Cemento', 'Concreto pulido · mate',
+    material('p-piso-marmol.jpg', 'Porcelanato', 'Cemento', 'Concreto pulido · mate',
       'El aspecto del concreto pulido sin fisuras ni curado. Mate, gris parejo, urbano. Une pisos continuos de gran superficie con un acabado sobrio y actual.',
       'Gran formato · 9–12 mm · Pisos continuos, locales, oficinas'),
-    material('card-porcelanato-travertino.jpg', 'Porcelanato', 'Travertino', 'Textura pétrea · cálido',
+    material('ext-entrada-villa.jpg', 'Porcelanato', 'Travertino', 'Textura pétrea · cálido',
       'La calidez y los poros del travertino, pero antideslizante, sin sellado y apto para exterior. Para terrazas, halls y zonas húmedas.',
       'Gran formato · 9–20 mm · Terrazas, halls, zonas húmedas'),
 
     /* ---- SINTERIZADA ---- */
-    divider('05', 'Piedra sinterizada', 'Lo más duro que instalamos. No porosa, resistente al calor directo, a los rayones y a toda mancha. Canto finísimo y formatos enormes para islas con canto waterfall.', 'k-piedra-negra.jpg'),
-    material('card-sinterizada-noir.jpg', 'Piedra sinterizada', 'Noir', 'Negro · veta dorada sutil',
+    divider('05', 'Piedra sinterizada', 'Lo más duro que instalamos. No porosa, resistente al calor directo, a los rayones y a toda mancha. Canto finísimo y formatos enormes para islas con canto waterfall.', 'foto-cocina-marmol-negro.jpg'),
+    material('foto-cocina-marmol-negro.jpg', 'Piedra sinterizada', 'Noir', 'Negro · veta dorada sutil',
       'La superficie definitiva para una cocina exigente. Negro con una veta dorada discreta, canto finísimo y formatos grandes. Aguanta el calor directo de una olla, no se raya con el cuchillo y no le entra ninguna mancha.',
       'Sinterizada · 12 mm · Islas con canto waterfall, mesones, mesas'),
-    material('card-sinterizada-calacatta.jpg', 'Piedra sinterizada', 'Calacatta', 'Blanco · veta gris',
+    material('foto-cocina-calacatta.jpg', 'Piedra sinterizada', 'Calacatta', 'Blanco · veta gris',
       'El blanco con veta gris del Calacatta con la resistencia total de la piedra sinterizada. Ni el vino, ni el aceite, ni los cítricos la afectan y no necesita sellado nunca. Belleza sin cuidados.',
       'Sinterizada · 12 mm · Mesones e islas de cocina, baños'),
 
@@ -150,7 +155,6 @@
       'Hecho en obra · Piscinas, terrazas, fachadas, gradas y rampas accesibles'),
 
     photo('ext-piscina.jpg', 'Terraza y borde de piscina en grano lavado antideslizante.'),
-    photo('ext-rampa-accesible.jpg', 'Rampa accesible: pendiente y textura pensadas para silla de ruedas.'),
     photo('ext-escalera-deco.jpg', 'Escalera exterior en grano lavado con diseño geométrico.'),
 
     text('Cómo trabajamos', 'Nuestro proceso',

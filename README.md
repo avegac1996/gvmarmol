@@ -39,7 +39,8 @@ python -m http.server 8000   # http://localhost:8000
 7. **Ambientes** — galería de 3 imágenes.
 8. **04 · Grano lavado** — pisos continuos para exteriores con **fotos reales**:
    terraza de piscina, escalera decorativa, entrada de residencia, paseo comercial,
-   patio comunitario, gradas de acceso y **rampa accesible** (silla de ruedas).
+   patio comunitario. (Las fotos de gradas/rampa se quitaron por baja resolución;
+   el texto de la sección sigue mencionando esos usos.)
 9. **05 · Proceso** — 4 pasos + condiciones (7 días, 70/30, por metro lineal).
 10. **Contacto** — formulario que arma un mensaje y abre WhatsApp.
 
