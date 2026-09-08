@@ -223,12 +223,11 @@ p{margin:0 0 1.1rem}
    PORTADA-LIBRO — hardcover realista
    ============================================================ */
 .book-intro{position:fixed;inset:0;z-index:9999;overflow:hidden;
-  background:
-    radial-gradient(120% 80% at 50% 8%, #2a2620 0%, #1a1712 42%, #0c0a08 100%);
+  background:#ece5d9 url("../img/quartz-bg.svg") center/cover no-repeat;
   display:grid;place-items:center;transition:opacity 1s ease,visibility 1s}
-.book-intro::after{content:"";position:absolute;left:50%;bottom:8%;width:min(70vw,540px);height:60px;
+.book-intro::after{content:"";position:absolute;left:50%;bottom:9%;width:min(66vw,520px);height:52px;
   transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%);filter:blur(6px)}
+  background:radial-gradient(ellipse,rgba(74,64,48,.34),transparent 70%);filter:blur(7px)}
 .book-intro.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
 
 .book-stage{position:relative;width:min(62vw,468px);aspect-ratio:1/1.32;perspective:2000px;perspective-origin:50% 38%}
@@ -275,8 +274,9 @@ p{margin:0 0 1.1rem}
   box-shadow:
     0 2px 0 rgba(255,246,230,.10),
     inset 0 0 0 1px rgba(0,0,0,.5),
-    inset 0 0 60px rgba(0,0,0,.45),
-    26px 34px 60px -12px rgba(0,0,0,.6);
+    inset 0 0 60px rgba(0,0,0,.4),
+    0 40px 70px -18px rgba(58,48,34,.5),
+    0 14px 30px -10px rgba(58,48,34,.28);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3.5vw,26px);padding:12% 12% 14%}
 /* marco en seco (deboss) */
 .book__cover::before{content:"";position:absolute;inset:6.5%;border-radius:3px;
@@ -290,9 +290,14 @@ p{margin:0 0 1.1rem}
   filter:drop-shadow(0 1px 0 rgba(255,246,230,.25)) drop-shadow(0 2px 5px rgba(0,0,0,.55))}
 .book__cover .t{position:relative;font-family:var(--serif);font-size:clamp(.6rem,1.7vw,.72rem);
   letter-spacing:.38em;text-transform:uppercase;color:#c9b48b}
-.book__hint{position:absolute;left:50%;bottom:-52px;transform:translateX(-50%);white-space:nowrap;
-  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(233,228,218,.5);animation:hp 2.6s infinite}
-@keyframes hp{0%,100%{opacity:.3}50%{opacity:.9}}
+.book__hint{position:absolute;left:50%;bottom:-64px;transform:translateX(-50%);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.7em;
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
+  color:#7a5a1c;padding:.75em 1.4em;border:1px solid rgba(122,90,28,.45);border-radius:100px;
+  background:rgba(255,253,248,.6);backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(90,72,40,.14);
+  animation:hp 2.4s infinite}
+.book__hint::before{content:"";width:16px;height:1px;background:#a8843d}
+@keyframes hp{0%,100%{opacity:.72;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(3px)}}
 
 .book:hover{transform:rotateX(5deg) rotateY(-19deg)}
 .book.is-open{transform:rotateX(4deg) rotateY(-4deg) translateX(4%)}
@@ -300,11 +305,11 @@ p{margin:0 0 1.1rem}
 .book.is-open .book__cover{transform:rotateY(-162deg)}
 .book.is-open .book__hint{opacity:0}
 
-.book-intro__skip{position:fixed;top:24px;right:26px;z-index:2;background:rgba(20,17,13,.5);
-  border:1px solid rgba(214,183,128,.28);
-  color:rgba(233,228,218,.7);font:inherit;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+.book-intro__skip{position:fixed;top:24px;right:26px;z-index:2;background:rgba(255,253,248,.55);
+  border:1px solid rgba(58,48,34,.28);backdrop-filter:blur(4px);
+  color:rgba(45,38,28,.7);font:inherit;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
   padding:.7em 1.3em;cursor:pointer;transition:.2s}
-.book-intro__skip:hover{color:#fff;border-color:rgba(214,183,128,.6)}
+.book-intro__skip:hover{color:#2d261c;border-color:rgba(138,106,44,.7);background:rgba(255,255,255,.85)}
 
 /* ---- reveal ---- */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}

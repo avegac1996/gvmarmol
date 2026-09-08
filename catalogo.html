@@ -42,7 +42,9 @@
   .folio{position:absolute;bottom:14px;font-size:.62rem;letter-spacing:.14em;color:#b3a893}
   .face--front .folio{right:18px}.face--back .folio{left:18px}
 
-  .pg{flex:1;display:flex;flex-direction:column;min-height:0}
+  .pg{flex:1;display:flex;flex-direction:column;min-height:0;min-width:0;max-width:100%}
+  .pg *{min-width:0}
+  .pg p,.pg li,.pg h2,.pg h3,.pg .pg__spec{overflow-wrap:break-word}
   .pg__kicker{font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.28em;
     text-transform:uppercase;color:var(--bronze)}
 
@@ -123,10 +125,39 @@
   .hint{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(154,145,132,.6)}
 
   @media(max-width:820px){
-    .book3d{width:94vw;aspect-ratio:3/4}
+    .stage{padding:82px 10px 96px}
+    .book3d{width:min(96vw,520px);aspect-ratio:3/4}
     #book{left:0}#book.at-start,#book.at-end{transform:none}
-    .leaf{left:0;width:100%}.face--front{box-shadow:none}
-    .cat-top{padding:12px 16px}.cat-top img{height:34px}
+    .leaf{left:0;width:100%}
+    .face--front,.face--back{box-shadow:none}
+    .cat-top{padding:12px 14px}.cat-top img{height:32px}
+    .cat-top a{font-size:.62rem;letter-spacing:.1em}
+    .pg--divider,.pg--text{padding:9% 8%}
+    .pg--divider{gap:9px}
+    .pg__sub{max-width:none}
+    .pg__mfig{height:34%}
+    .pg__mbody{padding:7% 8%;gap:7px}
+    .pg__body{font-size:.82rem;line-height:1.6}
+    .pg__name{font-size:1.4rem}
+    .pg--text p{font-size:.84rem}
+    .pg__facts{grid-template-columns:1fr;gap:9px}
+    .pg__toc li{font-size:.86rem}
+    .pg__clogo{width:46%}
+    .pg__cinfo,.pg__ctag{font-size:.8rem}
+    .book-wrap{gap:18px}
+    #counter{min-width:96px;font-size:.6rem}
+    .controls button{width:42px;height:42px}
+    .hint{font-size:.56rem;text-align:center;padding:0 20px}
+  }
+  @media(max-width:480px){
+    .book3d{width:96vw;aspect-ratio:3/4.15}
+    .pg__body{font-size:.8rem}
+    .pg--divider,.pg--text{padding:8% 7%}
+    .pg__mbody{padding:6% 7%}
+  }
+  @media(max-height:720px) and (max-width:820px){
+    .book3d{aspect-ratio:3/3.7}
+    .stage{padding:70px 10px 84px}
   }
 </style>
 </head>
