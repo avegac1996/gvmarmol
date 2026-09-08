@@ -35,7 +35,7 @@
     /* portada */
     '<div class="pg pg--cover">' +
       '<span class="pg__t">Catálogo 2026</span>' +
-      '<img class="pg__clogo" src="assets/img/emblem-light.svg" alt="GV MÁRMOL">' +
+      '<img class="pg__clogo" src="assets/img/book-emblem.svg" alt="GV MÁRMOL">' +
       '<h1 class="pg__ctitle">GV&nbsp;MÁRMOL</h1>' +
       '<p class="pg__ctag">Superficies en piedra natural y sinterizada</p>' +
       '<span class="pg__cline"></span>' +
@@ -75,18 +75,22 @@
 
     photo('k-marmol-blanco.jpg', 'Mesón y salpicadero en mármol blanco, Quito.'),
 
-    divider('03', 'Pisos y escaleras', 'Pisos de mármol y porcelanato de gran formato, graderías y peldaños. Grano lavado y pulido para exteriores.', 'p-escalera-curva.jpg'),
+    divider('03', 'Pisos, escaleras y grano lavado', 'Pisos de mármol y porcelanato de gran formato, graderías y peldaños. Grano lavado y pulido para exteriores.', 'p-escalera-curva.jpg'),
 
     photo('p-piso-marmol.jpg', 'Piso de mármol Calacatta pulido, Cumbayá.'),
     photo('p-escalera-clasica.jpg', 'Gradería en mármol gris para un lobby comercial.'),
 
     '<div class="pg pg--mat">' +
-      '<div class="pg__photo" style="background-image:url(\'assets/img/grano-lavado.svg\')"></div>' +
+      '<div class="pg__photo" style="background-image:url(\'assets/img/grano-textura.jpg\')"></div>' +
       '<div class="pg__mbody">' +
       '<h3 class="pg__name">Grano lavado y grano pulido</h3>' +
       '<p class="pg__line">Piso continuo hecho en obra, sin juntas, antideslizante y muy durable. Para piscinas, terrazas, fachadas, gradas de acceso y rampas accesibles.</p>' +
       '<a class="pg__btn" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, quisiera cotizar grano lavado para exteriores.") + '">Pedir precio por WhatsApp</a>' +
       '</div></div>',
+
+    photo('ext-piscina.jpg', 'Terraza y borde de piscina en grano lavado antideslizante.'),
+    photo('ext-rampa-accesible.jpg', 'Rampa accesible: pendiente y textura pensadas para silla de ruedas.'),
+    photo('ext-escalera-deco.jpg', 'Escalera exterior en grano lavado con diseño geométrico.'),
 
     text('Cómo trabajamos', 'Nuestro proceso',
       '<ol class="pg__steps">' +
@@ -104,7 +108,7 @@
       '<a class="pg__btn" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, quisiera una cotización. Les paso medidas / dirección:") + '">Pedir cotización</a>'),
 
     '<div class="pg pg--cover">' +
-      '<img class="pg__clogo" src="assets/img/emblem-light.svg" alt="GV MÁRMOL">' +
+      '<img class="pg__clogo" src="assets/img/book-emblem.svg" alt="GV MÁRMOL">' +
       '<h2 class="pg__ctitle" style="font-size:1.7rem;letter-spacing:.06em">Hablemos</h2>' +
       '<p class="pg__cinfo">WhatsApp <strong>098 800 7005</strong><br>(02) 241 6481 · gvmarmol@hotmail.com<br>Calle Anagaes N52-521, Quito · RUC 1712721255001</p>' +
       '<a class="pg__btn pg__btn--wa" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, vi el catálogo y quisiera una cotización.") + '">Escribir por WhatsApp</a>' +

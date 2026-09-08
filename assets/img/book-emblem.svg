@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="300" viewBox="0 0 460 300" role="img" aria-label="GV MÁRMOL">
+  <defs>
+    <linearGradient id="foil" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#f4e6c4"/><stop offset="0.35" stop-color="#d8b978"/>
+      <stop offset="0.6" stop-color="#b6923f"/><stop offset="0.8" stop-color="#e7cd94"/><stop offset="1" stop-color="#a67c35"/>
+    </linearGradient>
+    <filter id="emboss" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.4" stdDeviation="0.4" flood-color="#000" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="-1" stdDeviation="0.3" flood-color="#fff5df" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#emboss)">
+    <ellipse cx="230" cy="104" rx="172" ry="76" fill="none" stroke="url(#foil)" stroke-width="6.5"/>
+    <text x="231" y="141" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700"
+          font-size="98" letter-spacing="-2" fill="url(#foil)">GV</text>
+    <text x="230" y="236" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700"
+          font-size="38" letter-spacing="11" fill="url(#foil)">MÁRMOL</text>
+    <path d="M188 258 H272" stroke="url(#foil)" stroke-width="1.6"/>
+  </g>
+</svg>
