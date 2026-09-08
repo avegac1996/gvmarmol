@@ -19,7 +19,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 <style>
-  body{background:radial-gradient(circle at 50% 0%,#1c1a16,#0c0b09 72%);min-height:100svh}
+  body{background:radial-gradient(circle at 50% 0%,#1c1a16,#0c0b09 72%);min-height:100svh;
+    transition:opacity .7s ease}
+  body.catalog-out{opacity:0}
   .cat-top{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;justify-content:space-between;
     gap:16px;padding:16px 24px;color:var(--bone)}
   .cat-top a{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-soft)}
@@ -167,10 +169,10 @@
 <div class="book-intro" id="bookIntro" role="dialog" aria-label="Catálogo GV MÁRMOL">
   <button class="book-intro__skip">Saltar</button>
   <div class="book-stage">
-    <div class="book">
+    <div class="book" tabindex="0" role="button" aria-label="Abrir el catálogo">
       <div class="book__block"></div>
       <div class="book__pages"><p>Superficies en piedra<br>natural y sinterizada<br><br>Quito · Ecuador</p></div>
-      <div class="book__cover" tabindex="0" role="button" aria-label="Abrir el catálogo">
+      <div class="book__cover">
         <span class="book__spine" aria-hidden="true"></span>
         <span class="t">Catálogo · 2026</span>
         <img class="book__emblem" src="assets/img/book-emblem.svg" alt="GV MÁRMOL" width="300">

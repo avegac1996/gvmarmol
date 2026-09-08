@@ -29,11 +29,10 @@ python -m http.server 8000   # http://localhost:8000
 ## Secciones de la página
 
 1. **Portada tipo libro** — libro de tapa dura (cuero + relieve dorado) que aparece
-   **cada vez** que se entra; al tocarlo gira la tapa y revela el sitio.
+   **cada vez** que se entra; al tocarlo gira la tapa; un segundo toque entra al sitio.
    El mismo libro está en `catalogo.html`. `?nointro` en la URL lo omite (para pruebas).
 2. **Hero** — foto a sangre + frase de marca + botón «Ver catálogo».
-3. **01 · La casa** — GV MÁRMOL + lista de servicios + bloque **CEO / Fundador**
-   (Gustavo Vega, Fundador y Director — clase `.founder`).
+3. **01 · La casa** — GV MÁRMOL + lista de servicios.
 4. **Banda** — foto a sangre con frase.
 5. **02 · Colección** — 13 superficies (mármol, granito, cuarzo, porcelanato, sinterizada) (fotos reales) → clic abre WhatsApp con el material.
 6. **03 · Proyectos** — grilla editorial de 9 trabajos.
@@ -55,9 +54,12 @@ Regenerable con el script del historial; colores en `:root` / dentro de cada SVG
 
 ## Catálogo (`catalogo.html`)
 
-Libro de ~19 páginas que se voltean en 3D. Navegación: flechas del teclado, clic en
-los bordes o swipe. `catalogo.html#p5` abre en una página concreta. Cada material tiene
-botón «Pedir precio por WhatsApp».
+Se abre con el mismo libro de tapa dura del inicio. Adentro, ~31 páginas que se
+voltean en 3D: cada material es una página tipo revista (foto + texto editorial +
+ficha). Navegación: flechas del teclado, clic en los bordes o swipe.
+`catalogo.html#p5` abre en una página concreta. Cada material tiene botón
+«Pedir precio por WhatsApp». **Al llegar a la contraportada, el catálogo se cierra
+solo y vuelve al sitio** (`index.html`).
 
 ## Imágenes
 
@@ -82,5 +84,5 @@ botón «Pedir precio por WhatsApp».
 ## Datos de la empresa
 
 GV MÁRMOL — Gustavo Vega · WhatsApp 098 800 7005 (`+593988007005`) ·
-(02) 241 6481 · gvmarmol@hotmail.com · Calle Anagaes N52-521, Quito ·
+(02) 241 7545 · gvmarmol@hotmail.com · Calle Anagaes N52-521, Quito ·
 RUC 1712721255001 · Entrega ~7 días · Pago 70/30.

@@ -11,17 +11,24 @@
       intro.remove();
     } else {
       var bk = intro.querySelector(".book");
-      var cv = intro.querySelector(".book__cover");
-      document.body.style.overflow = "hidden";
+      var hint = intro.querySelector(".book__hint");
+      var closed = false, fb;
       var close = function () {
+        if (closed) return; closed = true; clearTimeout(fb);
         document.body.style.overflow = "";
         intro.classList.add("is-hidden");
         setTimeout(function () { intro.remove(); }, 900);
       };
-      var open = function () { bk.classList.add("is-open"); setTimeout(close, 1150); };
-      cv.addEventListener("click", open);
-      cv.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      var open = function () {
+        bk.classList.add("is-open");
+        if (hint) hint.textContent = "Toca para hojear";
+        fb = setTimeout(close, 9000);
+      };
+      var onClick = function () { bk.classList.contains("is-open") ? close() : open(); };
+      document.body.style.overflow = "hidden";
+      bk.addEventListener("click", onClick);
+      bk.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); }
       });
       intro.querySelector(".book-intro__skip").addEventListener("click", close);
     }
@@ -164,7 +171,7 @@
     '<div class="pg pg--cover">' +
       '<img class="pg__clogo" src="assets/img/book-emblem.svg" alt="GV MÁRMOL">' +
       '<h2 class="pg__ctitle" style="font-size:1.7rem;letter-spacing:.06em">Hablemos</h2>' +
-      '<p class="pg__cinfo">WhatsApp <strong>098 800 7005</strong><br>(02) 241 6481 · gvmarmol@hotmail.com<br>Calle Anagaes N52-521, Quito · RUC 1712721255001</p>' +
+      '<p class="pg__cinfo">WhatsApp <strong>098 800 7005</strong><br>(02) 241 7545 · gvmarmol@hotmail.com<br>Calle Anagaes N52-521, Quito · RUC 1712721255001</p>' +
       '<a class="pg__btn pg__btn--wa" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, vi el catálogo y quisiera una cotización.") + '">Escribir por WhatsApp</a>' +
       '<span class="pg__cline"></span><p class="pg__t">GV MÁRMOL · Damos forma a la piedra</p></div>'
   ];
@@ -191,6 +198,7 @@
   var nextBtn = document.getElementById("next");
   var counter = document.getElementById("counter");
 
+  var leaving = false, leaveTimer;
   function render() {
     leafEls.forEach(function (l, idx) {
       var flipped = idx < current;
@@ -199,11 +207,23 @@
     });
     book.classList.toggle("at-start", current === 0);
     book.classList.toggle("at-end", current === leaves);
+    var atEnd = current === leaves;
     counter.textContent = current === 0 ? "Presentación"
-      : current === leaves ? "Contraportada"
+      : atEnd ? (leaving ? "Volviendo al sitio…" : "Contraportada")
       : "Págs. " + (current * 2) + "–" + Math.min(current * 2 + 1, total);
     prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === leaves;
+    nextBtn.disabled = atEnd;
+
+    /* al llegar al final: cerrar el catálogo y volver al sitio */
+    if (atEnd && !leaving) {
+      leaving = true;
+      leaveTimer = setTimeout(function () {
+        document.body.classList.add("catalog-out");
+        setTimeout(function () { window.location.href = "index.html?nointro"; }, 750);
+      }, 2200);
+    } else if (!atEnd && leaving) {
+      leaving = false; clearTimeout(leaveTimer);
+    }
   }
   function next() { if (current < leaves) { current++; render(); } }
   function prev() { if (current > 0) { current--; render(); } }

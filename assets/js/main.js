@@ -7,26 +7,33 @@
   var intro = document.getElementById("bookIntro");
   if (intro) {
     var book = intro.querySelector(".book");
-    var cover = intro.querySelector(".book__cover");
-    var already = /[?&]nointro/.test(location.search);
+    var hint = intro.querySelector(".book__hint");
+    var closed = false, fallback;
 
     function closeIntro() {
+      if (closed) return; closed = true;
+      clearTimeout(fallback);
       document.body.style.overflow = "";
       intro.classList.add("is-hidden");
       setTimeout(function () { intro.remove(); }, 900);
     }
     function openBook() {
       book.classList.add("is-open");
-      setTimeout(closeIntro, 1150);
+      if (hint) hint.textContent = "Toca para entrar";
+      // a partir de aquí, cualquier clic en el libro continúa
+      fallback = setTimeout(closeIntro, 9000);
+    }
+    function onBookClick() {
+      book.classList.contains("is-open") ? closeIntro() : openBook();
     }
 
-    if (already) {
+    if (/[?&]nointro/.test(location.search)) {
       intro.remove();
     } else {
       document.body.style.overflow = "hidden";
-      cover.addEventListener("click", openBook);
-      cover.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openBook(); }
+      book.addEventListener("click", onBookClick);
+      book.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onBookClick(); }
       });
       var skip = intro.querySelector(".book-intro__skip");
       if (skip) skip.addEventListener("click", closeIntro);

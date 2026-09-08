@@ -1,8 +1,6 @@
 # SEO — GV MÁRMOL
 
-> **Este es el archivo de SEO / posicionamiento del sitio ("el CEO de la página").**
-> El bloque visible del **CEO / Fundador (Gustavo Vega, Fundador y Director)**
-> está en `index.html`, dentro de la sección **01 · La casa** (clase `.founder`).
+> **Este es el archivo de SEO / posicionamiento del sitio.**
 
 Guía de posicionamiento del sitio **gvmarmol.com**. Resume lo que ya está
 implementado en el código y lo que falta hacer fuera del sitio.
@@ -66,7 +64,7 @@ implementado en el código y lo que falta hacer fuera del sitio.
    - Crear/reclamar la ficha con el nombre exacto **GV MÁRMOL**.
    - Categoría principal: *Marmolería* / *Proveedor de encimeras*.
    - Categorías secundarias: *Contratista de pisos*, *Tienda de materiales de construcción*.
-   - Dirección: Calle Anagaes N52-521, Quito. Teléfono: 098 800 7005 / (02) 241 6481.
+   - Dirección: Calle Anagaes N52-521, Quito. Teléfono: 098 800 7005 / (02) 241 7545.
    - Horario: Lun–Vie 8:00–17:30, Sáb 8:00–13:00.
    - Subir 15–20 fotos reales: taller, losas, cocinas instaladas, baños, antes/después.
    - Pedir reseñas a clientes cerrados (arquitectos, constructoras). Meta: 20+ con 4.7★.
