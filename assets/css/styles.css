@@ -281,7 +281,9 @@ p{margin:0 0 1.1rem}
 .book__emblem{width:70%;max-width:300px;position:relative;
   filter:drop-shadow(0 1px 0 rgba(255,246,230,.25)) drop-shadow(0 2px 5px rgba(0,0,0,.55))}
 .book__cover .t{position:relative;font-family:var(--serif);font-size:clamp(.6rem,1.7vw,.72rem);
-  letter-spacing:.38em;text-transform:uppercase;color:#c9b48b}
+  letter-spacing:.38em;text-transform:uppercase;color:#c9b48b;text-align:center}
+.book__cover .t--list{letter-spacing:.16em;font-size:clamp(.5rem,1.4vw,.6rem);line-height:2;
+  color:#b79b6e}
 .book__hint{position:absolute;left:50%;bottom:-64px;transform:translateX(-50%);white-space:nowrap;
   display:inline-flex;align-items:center;gap:.7em;
   font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
