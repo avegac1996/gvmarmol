@@ -50,10 +50,10 @@
       '<ol class="pg__toc">' +
       '<li><span>Piedra natural</span><b>05</b></li>' +
       '<li><span>Superficies técnicas</span><b>13</b></li>' +
-      '<li><span>Pisos y escaleras</span><b>20</b></li>' +
-      '<li><span>Nuestro proceso</span><b>24</b></li>' +
-      '<li><span>Cómo cotizar</span><b>25</b></li>' +
-      '<li><span>Contacto</span><b>26</b></li></ol>'),
+      '<li><span>Pisos, escaleras y grano lavado</span><b>20</b></li>' +
+      '<li><span>Nuestro proceso</span><b>25</b></li>' +
+      '<li><span>Cómo cotizar</span><b>26</b></li>' +
+      '<li><span>Contacto</span><b>27</b></li></ol>'),
 
     photo('foto-cocina-marmol-negro.jpg', 'Piedra que viste el espacio y dura toda la vida.'),
 
@@ -79,6 +79,14 @@
 
     photo('p-piso-marmol.jpg', 'Piso de mármol Calacatta pulido, Cumbayá.'),
     photo('p-escalera-clasica.jpg', 'Gradería en mármol gris para un lobby comercial.'),
+
+    '<div class="pg pg--mat">' +
+      '<div class="pg__photo" style="background-image:url(\'assets/img/grano-lavado.svg\')"></div>' +
+      '<div class="pg__mbody">' +
+      '<h3 class="pg__name">Grano lavado y grano pulido</h3>' +
+      '<p class="pg__line">Piso continuo hecho en obra, sin juntas, antideslizante y muy durable. Para piscinas, terrazas, fachadas, gradas de acceso y rampas accesibles.</p>' +
+      '<a class="pg__btn" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, quisiera cotizar grano lavado para exteriores.") + '">Pedir precio por WhatsApp</a>' +
+      '</div></div>',
 
     text('Cómo trabajamos', 'Nuestro proceso',
       '<ol class="pg__steps">' +

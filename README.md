@@ -31,13 +31,26 @@ python -m http.server 8000   # http://localhost:8000
 1. **Portada tipo libro** — al entrar aparece la tapa con el logo; al tocarla se abre
    como un libro y revela el sitio (una vez por sesión; `index.html?nointro` la omite).
 2. **Hero** — foto a sangre + frase de marca + botón «Ver catálogo».
-3. **01 · La casa** — GV MÁRMOL / Gustavo Vega + lista de servicios.
-4. **02 · Colección** — 10 superficies (fotos reales) → clic abre WhatsApp con el material.
-5. **03 · Proyectos** — grilla editorial de trabajos.
-6. **04 · Proceso** — 4 pasos + condiciones (7 días, 70/30, por metro lineal).
-7. **Contacto** — formulario que arma un mensaje y abre WhatsApp.
+3. **01 · La casa** — GV MÁRMOL + lista de servicios + bloque **CEO / Fundador**
+   (Gustavo Vega, Fundador y Director — clase `.founder`).
+4. **Banda** — foto a sangre con frase.
+5. **02 · Colección** — 10 superficies (fotos reales) → clic abre WhatsApp con el material.
+6. **03 · Proyectos** — grilla editorial de 9 trabajos.
+7. **Ambientes** — galería de 3 imágenes.
+8. **04 · Grano lavado** — pisos continuos para exteriores: piscinas, terrazas,
+   fachadas, gradas de acceso y **rampas accesibles**. La imagen es una textura;
+   reemplazar por fotos reales de obras.
+9. **05 · Proceso** — 4 pasos + condiciones (7 días, 70/30, por metro lineal).
+10. **Contacto** — formulario que arma un mensaje y abre WhatsApp.
 
-Menú: **Colección · Proyectos · Catálogo · Contacto**. Botones flotantes: Catálogo + WhatsApp.
+Menú: **Colección · Proyectos · Contacto** (3 ítems). El catálogo se abre solo
+desde el botón flotante. Botones flotantes: Catálogo + WhatsApp.
+
+## Logo
+
+Vectorial (`logo*.svg`, `emblem-light.svg`, `favicon.svg`): óvalo **azul** (elipse
+simétrica) con **GV** en serif plata + gema. "GV MÁRMOL" como wordmark.
+Regenerable con el script del historial; colores en `:root` / dentro de cada SVG.
 
 ## Catálogo (`catalogo.html`)
 
@@ -47,13 +60,13 @@ botón «Pedir precio por WhatsApp».
 
 ## Imágenes
 
-Todas las imágenes son **fotos realistas** recortadas de los renders entregados:
-
-- `k-*.jpg`, `p-*.jpg`, `foto-cocina-*.jpg` — escenas (hero, proyectos, divisores).
+- `k-*.jpg`, `p-*.jpg`, `foto-cocina-*.jpg` — escenas reales (hero, banda, proyectos,
+  ambientes, divisores del catálogo).
 - `card-*.jpg` — 10 superficies con nombre y muestra (sección Colección y catálogo).
-- Logotipos: `logo*.svg`, `emblem-light.svg`, `favicon.svg` — vector, paleta bronce.
-
-Se eliminaron todos los dibujos/ilustraciones y texturas SVG de la versión anterior.
+- `grano-lavado.svg` — **textura** de árido lavado (única imagen no fotográfica).
+  **Pendiente:** fotos reales de grano lavado en piscinas / terrazas / fachadas /
+  gradas de entrada / rampas para silla de ruedas — enviarlas y se reemplazan.
+- Logotipos: `logo*.svg`, `emblem-light.svg`, `favicon.svg`.
 
 ## Personalización
 

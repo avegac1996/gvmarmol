@@ -1,5 +1,9 @@
 # SEO — GV MÁRMOL
 
+> **Este es el archivo de SEO / posicionamiento del sitio ("el CEO de la página").**
+> El bloque visible del **CEO / Fundador (Gustavo Vega, Fundador y Director)**
+> está en `index.html`, dentro de la sección **01 · La casa** (clase `.founder`).
+
 Guía de posicionamiento del sitio **gvmarmol.com**. Resume lo que ya está
 implementado en el código y lo que falta hacer fuera del sitio.
 
