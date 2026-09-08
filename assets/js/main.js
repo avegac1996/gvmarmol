@@ -8,12 +8,11 @@
   if (intro) {
     var book = intro.querySelector(".book");
     var cover = intro.querySelector(".book__cover");
-    var already = sessionStorage.getItem("gv_intro_seen") || /[?&]nointro/.test(location.search);
+    var already = /[?&]nointro/.test(location.search);
 
     function closeIntro() {
       document.body.style.overflow = "";
       intro.classList.add("is-hidden");
-      sessionStorage.setItem("gv_intro_seen", "1");
       setTimeout(function () { intro.remove(); }, 900);
     }
     function openBook() {

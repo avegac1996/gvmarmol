@@ -59,12 +59,19 @@
   .pg__sub{font-size:.76rem;line-height:1.6;color:rgba(233,228,218,.82);max-width:32ch;margin:0}
   .pg__rule{width:46px;height:1px;background:var(--bronze-l);margin-top:4px}
 
-  /* material: lámina de la superficie + datos abajo */
-  .pg--mat{gap:0;background:var(--paper);justify-content:center}
-  .pg__photo{width:86%;margin:0 7% 22px;aspect-ratio:646/216;background:#141210 center/cover no-repeat;flex:none}
-  .pg__mbody{display:flex;flex-direction:column;gap:14px;padding:0 7%;flex:none;align-items:flex-start}
-  .pg__name{font-family:var(--serif);font-size:clamp(1.15rem,3vw,1.65rem);color:var(--ink);margin:0}
-  .pg__line{font-size:.82rem;line-height:1.7;color:var(--ink-soft);margin:0;max-width:32ch}
+  /* material: revista — foto arriba, columna editorial abajo */
+  .pg--mat{gap:0;background:var(--paper);flex-direction:column}
+  .pg__mfig{position:relative;width:100%;height:40%;flex:none;
+    background:#141210 center/cover no-repeat;background-position:center 45%}
+  .pg__ftag{position:absolute;left:0;bottom:0;font-family:var(--sans);font-size:.5rem;font-weight:600;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--paper);background:rgba(9,8,6,.72);
+    padding:.55em .95em}
+  .pg__mbody{flex:1;min-height:0;display:flex;flex-direction:column;gap:9px;padding:8% 9%;overflow:hidden}
+  .pg__mbody .pg__kicker{font-size:.52rem;letter-spacing:.22em}
+  .pg__name{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.85rem);color:var(--ink);margin:.1em 0 0;line-height:1.1}
+  .pg__body{font-size:.73rem;line-height:1.68;color:var(--ink-soft);margin:0}
+  .pg__spec{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze);
+    margin:0;padding-top:8px;border-top:1px solid var(--line-l);line-height:1.5}
 
   /* texto */
   .pg--text{padding:11%;gap:10px}
@@ -86,7 +93,7 @@
 
   .pg__btn{align-self:flex-start;background:var(--bronze);color:#fff;font-size:.62rem;font-weight:600;
     letter-spacing:.14em;text-transform:uppercase;padding:.85em 1.3em}
-  .pg--text .pg__btn,.pg--cover .pg__btn{margin-top:auto}
+  .pg--text .pg__btn,.pg--cover .pg__btn,.pg--mat .pg__btn{margin-top:auto}
   .pg__btn--wa{background:var(--ok)}
 
   /* portada / contraportada */
@@ -124,6 +131,24 @@
 </style>
 </head>
 <body>
+
+<!-- MISMO LIBRO DE PORTADA QUE EL INICIO -->
+<div class="book-intro" id="bookIntro" role="dialog" aria-label="Catálogo GV MÁRMOL">
+  <button class="book-intro__skip">Saltar</button>
+  <div class="book-stage">
+    <div class="book">
+      <div class="book__block"></div>
+      <div class="book__pages"><p>Superficies en piedra<br>natural y sinterizada<br><br>Quito · Ecuador</p></div>
+      <div class="book__cover" tabindex="0" role="button" aria-label="Abrir el catálogo">
+        <span class="book__spine" aria-hidden="true"></span>
+        <span class="t">Catálogo · 2026</span>
+        <img class="book__emblem" src="assets/img/book-emblem.svg" alt="GV MÁRMOL" width="300">
+        <span class="t">Piedra natural &amp; sinterizada</span>
+        <span class="book__hint">Toca el libro para abrir</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="cat-top">
   <a href="index.html">← Volver</a>

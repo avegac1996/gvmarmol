@@ -28,18 +28,19 @@ python -m http.server 8000   # http://localhost:8000
 
 ## Secciones de la página
 
-1. **Portada tipo libro** — al entrar aparece la tapa con el logo; al tocarla se abre
-   como un libro y revela el sitio (una vez por sesión; `index.html?nointro` la omite).
+1. **Portada tipo libro** — libro de tapa dura (cuero + relieve dorado) que aparece
+   **cada vez** que se entra; al tocarlo gira la tapa y revela el sitio.
+   El mismo libro está en `catalogo.html`. `?nointro` en la URL lo omite (para pruebas).
 2. **Hero** — foto a sangre + frase de marca + botón «Ver catálogo».
 3. **01 · La casa** — GV MÁRMOL + lista de servicios + bloque **CEO / Fundador**
    (Gustavo Vega, Fundador y Director — clase `.founder`).
 4. **Banda** — foto a sangre con frase.
-5. **02 · Colección** — 10 superficies (fotos reales) → clic abre WhatsApp con el material.
+5. **02 · Colección** — 13 superficies (mármol, granito, cuarzo, porcelanato, sinterizada) (fotos reales) → clic abre WhatsApp con el material.
 6. **03 · Proyectos** — grilla editorial de 9 trabajos.
 7. **Ambientes** — galería de 3 imágenes.
-8. **04 · Grano lavado** — pisos continuos para exteriores: piscinas, terrazas,
-   fachadas, gradas de acceso y **rampas accesibles**. La imagen es una textura;
-   reemplazar por fotos reales de obras.
+8. **04 · Grano lavado** — pisos continuos para exteriores con **fotos reales**:
+   terraza de piscina, escalera decorativa, entrada de residencia, paseo comercial,
+   patio comunitario, gradas de acceso y **rampa accesible** (silla de ruedas).
 9. **05 · Proceso** — 4 pasos + condiciones (7 días, 70/30, por metro lineal).
 10. **Contacto** — formulario que arma un mensaje y abre WhatsApp.
 
