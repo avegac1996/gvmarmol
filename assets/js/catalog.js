@@ -26,6 +26,11 @@
       '<h2 class="pg__h">' + title + '</h2>' + body + '</div>';
   };
 
+  var photo = function (img, caption) {
+    return '<div class="pg pg--photo" style="background-image:url(\'assets/img/' + img + '\')">' +
+      (caption ? '<p class="pg__cap">' + caption + '</p>' : '') + '</div>';
+  };
+
   var PAGES = [
     /* portada */
     '<div class="pg pg--cover">' +
@@ -43,12 +48,14 @@
 
     text('Contenido', 'Índice',
       '<ol class="pg__toc">' +
-      '<li><span>Piedra natural</span><b>04</b></li>' +
-      '<li><span>Superficies técnicas</span><b>10</b></li>' +
-      '<li><span>Pisos y escaleras</span><b>16</b></li>' +
-      '<li><span>Nuestro proceso</span><b>17</b></li>' +
-      '<li><span>Cómo cotizar</span><b>18</b></li>' +
-      '<li><span>Contacto</span><b>19</b></li></ol>'),
+      '<li><span>Piedra natural</span><b>05</b></li>' +
+      '<li><span>Superficies técnicas</span><b>13</b></li>' +
+      '<li><span>Pisos y escaleras</span><b>20</b></li>' +
+      '<li><span>Nuestro proceso</span><b>24</b></li>' +
+      '<li><span>Cómo cotizar</span><b>25</b></li>' +
+      '<li><span>Contacto</span><b>26</b></li></ol>'),
+
+    photo('foto-cocina-marmol-negro.jpg', 'Piedra que viste el espacio y dura toda la vida.'),
 
     divider('01', 'Piedra natural', 'Mármol, granito y cuarzo. Veta única, carácter y durabilidad para mesones, islas y revestimientos.', 'k-isla-marmol.jpg'),
     material('card-granito-san-gabriel.jpg', 'Granito Negro San Gabriel', 'Negro con cristales; muy resistente a rayones y calor. Ideal para mesones de cocina.'),
@@ -57,6 +64,8 @@
     material('card-cuarzo-calacatta.jpg', 'Cuarzo Calacatta', 'Blanco con veta marcada, no poroso. Belleza y resistencia.'),
     material('card-cuarzo-beige.jpg', 'Cuarzo Beige', 'Beige cálido y uniforme. Combina con maderas y tonos neutros.'),
 
+    photo('k-cocina-clasica.jpg', 'Cocina clásica · mesón de piedra oscura, Tumbaco.'),
+
     divider('02', 'Superficies técnicas', 'Porcelanato de gran formato y piedra sinterizada: altísima dureza, no porosas, resistentes a manchas, rayones y calor.', 'k-piedra-negra.jpg'),
     material('card-sinterizada-noir.jpg', 'Piedra Sinterizada Noir', 'Negro con veta dorada. Máxima resistencia, canto fino, gran formato.'),
     material('card-sinterizada-calacatta.jpg', 'Piedra Sinterizada Calacatta', 'Blanco con veta gris. No se mancha con vino, aceite ni cítricos.'),
@@ -64,7 +73,12 @@
     material('card-porcelanato-cemento.jpg', 'Porcelanato Cemento', 'Acabado concreto, mate y sobrio. Moderno y versátil.'),
     material('card-porcelanato-travertino.jpg', 'Porcelanato Travertino', 'Textura pétrea cálida. Naturaleza en tu hogar.'),
 
+    photo('k-marmol-blanco.jpg', 'Mesón y salpicadero en mármol blanco, Quito.'),
+
     divider('03', 'Pisos y escaleras', 'Pisos de mármol y porcelanato de gran formato, graderías y peldaños. Grano lavado y pulido para exteriores.', 'p-escalera-curva.jpg'),
+
+    photo('p-piso-marmol.jpg', 'Piso de mármol Calacatta pulido, Cumbayá.'),
+    photo('p-escalera-clasica.jpg', 'Gradería en mármol gris para un lobby comercial.'),
 
     text('Cómo trabajamos', 'Nuestro proceso',
       '<ol class="pg__steps">' +
@@ -83,7 +97,7 @@
 
     '<div class="pg pg--cover">' +
       '<img class="pg__clogo" src="assets/img/emblem-light.svg" alt="GV MÁRMOL">' +
-      '<h2 class="pg__ctitle" style="font-size:1.9rem">Hablemos de tu proyecto</h2>' +
+      '<h2 class="pg__ctitle" style="font-size:1.7rem;letter-spacing:.06em">Hablemos</h2>' +
       '<p class="pg__cinfo">WhatsApp <strong>098 800 7005</strong><br>(02) 241 6481 · gvmarmol@hotmail.com<br>Calle Anagaes N52-521, Quito · RUC 1712721255001</p>' +
       '<a class="pg__btn pg__btn--wa" target="_blank" rel="noopener" href="' + wa("Hola GV MÁRMOL, vi el catálogo y quisiera una cotización.") + '">Escribir por WhatsApp</a>' +
       '<span class="pg__cline"></span><p class="pg__t">GV MÁRMOL · Damos forma a la piedra</p></div>'

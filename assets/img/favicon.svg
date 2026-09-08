@@ -1,18 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="GV MÁRMOL">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#211e1a"/><stop offset="1" stop-color="#14120E"/>
-    </linearGradient>
-    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#b09a80"/><stop offset="1" stop-color="#6b573f"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="13" fill="url(#g)"/>
-  <ellipse cx="32" cy="30" rx="24" ry="15" fill="none" stroke="url(#b)" stroke-width="3"/>
-  <path d="M20 40 C30 47 44 45 50 39 C42 43 28 44 23 39 Z" fill="url(#b)"/>
-  <g fill="#f4efe6">
-    <path fill-rule="evenodd" d="M33 20 A11 11 0 1 0 33 42 L29 39 A7 7 0 1 1 29 23 Z M25 29 H35 L33 33 H25 Z"/>
-    <path d="M32 21 L38 24 L34 44 L30 43 Z"/>
-    <path d="M43 22 L48 19 L36 45 L33 43 Z"/>
-  </g>
+  <defs><linearGradient id="br" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c1ab8e"/><stop offset=".45" stop-color="#95795b"/><stop offset="1" stop-color="#6f5a44"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#211e1a"/><stop offset="1" stop-color="#14120E"/></linearGradient></defs>
+  <rect width="64" height="64" rx="13" fill="url(#bg)"/>
+  <ellipse cx="32" cy="31" rx="25" ry="15.5" fill="none" stroke="url(#br)" stroke-width="2.6"/>
+  <path fill="none" stroke="url(#br)" stroke-width="2.4" stroke-linecap="round" d="M12 40 Q32 51 52 39"/>
+  <text x="32.5" y="41" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700"
+        font-size="26" letter-spacing="-1.5" fill="#F7F4EF">GV</text>
 </svg>

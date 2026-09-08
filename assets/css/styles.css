@@ -69,7 +69,11 @@ p{margin:0 0 1.1rem}
 /* ---- header ---- */
 .site-header{position:fixed;inset:0 0 auto 0;z-index:50;padding:22px 0;
   transition:background .35s,padding .35s,border-color .35s;border-bottom:1px solid transparent}
-.site-header.scrolled{background:rgba(18,17,15,.9);backdrop-filter:blur(12px);
+.site-header::before{content:"";position:absolute;inset:0;bottom:auto;height:220%;z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(11,10,8,.82),rgba(11,10,8,.35) 45%,rgba(11,10,8,0));
+  transition:opacity .35s}
+.site-header.scrolled::before{opacity:0}
+.site-header.scrolled{background:rgba(16,15,13,.92);backdrop-filter:blur(12px);
   padding:12px 0;border-color:var(--line-d)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand img{height:44px;width:auto;transition:height .35s}
@@ -84,11 +88,11 @@ p{margin:0 0 1.1rem}
 .nav-toggle{display:none;background:none;border:0;color:var(--bone);font-size:1.5rem;cursor:pointer;line-height:1}
 
 /* ---- hero ---- */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
 .hero__bg{position:absolute;inset:0;z-index:-2;background:#000 center/cover no-repeat}
 .hero__bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(12,11,9,.92) 0%,rgba(12,11,9,.55) 45%,rgba(12,11,9,.35) 100%)}
-.hero__inner{padding:120px 0 60px;max-width:860px;width:100%}
+  background:linear-gradient(to top,rgba(12,11,9,.92) 0%,rgba(12,11,9,.5) 46%,rgba(12,11,9,.3) 100%)}
+.hero__inner{padding:150px 0 clamp(56px,9vh,104px);max-width:840px;width:100%}
 .hero h1{color:#fff}
 .hero h1 em{font-style:italic;color:var(--bronze-l)}
 .hero p{margin:1.6rem 0 2.4rem;font-size:clamp(1.05rem,1.5vw,1.28rem);color:rgba(233,228,218,.82);max-width:46ch}
@@ -111,6 +115,23 @@ p{margin:0 0 1.1rem}
 .signature span{display:block;font-family:var(--sans);font-style:normal;font-size:.7rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--ink-soft);margin-top:.4em}
 
+/* ---- banda de foto a sangre ---- */
+.band{position:relative;height:clamp(320px,54vh,540px);overflow:hidden;display:flex;align-items:flex-end}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,9,7,.92),rgba(10,9,7,.35) 45%,rgba(10,9,7,.15))}
+.band__t{position:relative;padding:clamp(28px,5vw,64px);max-width:22ch}
+.band__t p{font-family:var(--serif);font-size:clamp(1.5rem,2.7vw,2.5rem);color:#fff;font-style:italic;
+  margin:0;line-height:1.28;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+
+/* ---- galería ambientes ---- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gallery figure{position:relative;margin:0;overflow:hidden;aspect-ratio:1/1;background:#000}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:0;bottom:0;padding:16px 18px;font-family:var(--serif);font-size:1.05rem;color:#fff;
+  background:linear-gradient(to top,rgba(12,11,9,.85),transparent);width:100%}
+
 /* ---- colección (materiales) ---- */
 .collection{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
 .mat{position:relative;overflow:hidden;aspect-ratio:20/7;cursor:pointer;background:#000}
@@ -124,18 +145,18 @@ p{margin:0 0 1.1rem}
 .mat:hover .mat__hint{opacity:1;transform:none}
 
 /* ---- proyectos ---- */
-.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.proj{position:relative;overflow:hidden;background:#000}
+.projects{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(160px,20vw,240px);gap:6px}
+.proj{position:relative;overflow:hidden;background:#000;grid-row:span 2}
 .proj img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
 .proj:hover img{transform:scale(1.04)}
-.proj figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 22px 18px;
-  background:linear-gradient(to top,rgba(12,11,9,.9),transparent);
-  font-family:var(--serif);font-size:1.25rem;color:#fff}
-.proj figcaption span{display:block;font-family:var(--sans);font-size:.64rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--bronze-l);margin-bottom:.3em}
-.proj--w3{grid-column:span 3;aspect-ratio:3/2}
-.proj--w2{grid-column:span 2;aspect-ratio:4/5}
-.proj--w4{grid-column:span 4;aspect-ratio:16/9}
+.proj figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 22px 18px;
+  background:linear-gradient(to top,rgba(10,9,7,.94),rgba(10,9,7,.4) 55%,transparent);
+  font-family:var(--serif);font-size:1.2rem;color:#fff}
+.proj figcaption span{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#d8c4ab;margin-bottom:.35em}
+.proj--w3{grid-column:span 3}
+.proj--w2{grid-column:span 2}
+.proj--w4{grid-column:span 4}
 
 /* ---- proceso / condiciones ---- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-d);
@@ -222,7 +243,8 @@ p{margin:0 0 1.1rem}
    ============================================================ */
 @media(max-width:1024px){
   .projects{grid-template-columns:repeat(4,1fr)}
-  .proj--w3{grid-column:span 2}.proj--w2{grid-column:span 2}.proj--w4{grid-column:span 4}
+  .proj--w3,.proj--w2,.proj--w4{grid-column:span 2}
+  .gallery{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .split,.contact{grid-template-columns:1fr;gap:44px}
   .split__media{aspect-ratio:16/10}
@@ -236,8 +258,11 @@ p{margin:0 0 1.1rem}
   .nav a{font-size:.9rem;opacity:1}
   .nav-toggle{display:block;z-index:56}
   .collection{grid-template-columns:1fr}
-  .projects{grid-template-columns:1fr}
-  .proj--w3,.proj--w2,.proj--w4{grid-column:span 1;aspect-ratio:4/3}
+  .projects{grid-template-columns:1fr;grid-auto-rows:auto}
+  .proj{grid-row:auto;aspect-ratio:4/3}
+  .proj--w3,.proj--w2,.proj--w4{grid-column:span 1}
+  .gallery{grid-template-columns:1fr}
+  .gallery figure{aspect-ratio:16/10}
   .steps{grid-template-columns:1fr}
   .site-footer .cols{grid-template-columns:1fr}
   .fab a span{display:none}
