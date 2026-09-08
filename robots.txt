@@ -1,0 +1,6 @@
+# robots.txt — GV MÁRMOL
+User-agent: *
+Allow: /
+Disallow: /assets/js/
+
+Sitemap: https://www.gvmarmol.com/sitemap.xml

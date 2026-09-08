@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo GV MÁRMOL 2026 | Mármol, Granito y Piedra Sinterizada</title>
+<meta name="description" content="Catálogo interactivo de GV MÁRMOL: superficies en piedra natural y sinterizada. Pide precio por WhatsApp 098 800 7005.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gvmarmol.com/catalogo.html">
+<meta property="og:title" content="Catálogo GV MÁRMOL 2026">
+<meta property="og:description" content="Hojea nuestro catálogo de superficies en piedra natural y sinterizada.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gvmarmol.com/catalogo.html">
+<meta property="og:image" content="https://www.gvmarmol.com/assets/img/k-isla-marmol.jpg">
+<meta name="theme-color" content="#12110F">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  body{background:radial-gradient(circle at 50% 0%,#1c1a16,#0c0b09 72%);min-height:100svh}
+  .cat-top{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:16px 24px;color:var(--bone)}
+  .cat-top a{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-soft)}
+  .cat-top a:hover{color:var(--bone)}
+  .cat-top img{height:44px;width:auto}
+
+  .stage{min-height:100svh;display:grid;place-items:center;padding:96px 16px 120px}
+  .book-wrap{width:100%;max-width:1040px;display:flex;flex-direction:column;align-items:center;gap:28px}
+  .book3d{position:relative;width:min(94vw,980px);aspect-ratio:3/2;transform-style:preserve-3d;perspective:2600px}
+  #book{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.55,.05,.2,1)}
+  #book.at-start{transform:translateX(-25%)}
+  #book.at-end{transform:translateX(25%)}
+  .leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-style:preserve-3d;
+    transform-origin:left center;transition:transform 1s cubic-bezier(.55,.05,.2,1);cursor:pointer}
+  .leaf.flipped{transform:rotateY(-180deg)}
+  .face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:var(--paper);color:var(--ink)}
+  .face--front{box-shadow:inset 20px 0 34px -24px rgba(0,0,0,.4)}
+  .face--back{transform:rotateY(180deg);box-shadow:inset -20px 0 34px -24px rgba(0,0,0,.4)}
+  .face__inner{position:absolute;inset:0;display:flex;flex-direction:column}
+  .folio{position:absolute;bottom:14px;font-size:.62rem;letter-spacing:.14em;color:#b3a893}
+  .face--front .folio{right:18px}.face--back .folio{left:18px}
+
+  .pg{flex:1;display:flex;flex-direction:column;min-height:0}
+  .pg__kicker{font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--bronze)}
+
+  /* divisores con foto */
+  .pg--divider{align-items:flex-start;justify-content:flex-end;gap:12px;padding:11%;
+    background-size:cover;background-position:center;color:var(--bone)}
+  .pg--divider .pg__kicker{color:var(--bronze-l)}
+  .pg__big{font-family:var(--serif);font-size:clamp(1.8rem,6vw,3rem);color:#fff}
+  .pg__sub{font-size:.76rem;line-height:1.6;color:rgba(233,228,218,.82);max-width:32ch;margin:0}
+  .pg__rule{width:46px;height:1px;background:var(--bronze-l);margin-top:4px}
+
+  /* material: lámina de la superficie + datos abajo */
+  .pg--mat{gap:0;background:var(--paper);justify-content:flex-start}
+  .pg__photo{width:86%;margin:9% 7% 0;aspect-ratio:646/230;background:#141210 center/cover no-repeat;flex:none}
+  .pg__mbody{display:flex;flex-direction:column;gap:14px;padding:7% 7% 9%;flex:1}
+  .pg__line{font-size:.8rem;line-height:1.65;color:var(--ink-soft);margin:0;max-width:34ch}
+
+  /* texto */
+  .pg--text{padding:11%;gap:10px}
+  .pg__h{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,2rem);color:var(--ink);margin:.1em 0 .3em;line-height:1.14}
+  .pg--text p{font-size:.76rem;line-height:1.62;color:var(--ink-soft);margin:0 0 .5em}
+  .pg__sign{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1rem;margin-top:auto!important}
+  .pg__sign span{font-family:var(--sans);font-style:normal;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#b3a893}
+  .pg__toc{list-style:none;padding:0;margin:8px 0 0}
+  .pg__toc li{display:flex;gap:10px;padding:9px 0;border-bottom:1px dotted #cdc3af;font-size:.8rem;color:var(--ink-soft)}
+  .pg__toc li b{margin-left:auto;font-family:var(--serif);color:var(--bronze)}
+  .pg__steps{list-style:none;padding:0;margin:6px 0 0;counter-reset:s}
+  .pg__steps li{position:relative;padding:0 0 12px 28px;font-size:.72rem;color:var(--ink-soft)}
+  .pg__steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:18px;height:18px;
+    border:1px solid var(--bronze);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:var(--bronze);font-size:.66rem}
+  .pg__steps b{display:block;font-size:.82rem;color:var(--ink);font-family:var(--serif)}
+  .pg__facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+  .pg__facts b{display:block;font-family:var(--serif);color:var(--ink);font-size:.95rem}
+  .pg__facts span{font-size:.66rem;line-height:1.5;color:var(--ink-soft)}
+
+  .pg__btn{margin-top:auto;align-self:flex-start;background:var(--bronze);color:#fff;font-size:.62rem;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;padding:.85em 1.3em}
+  .pg__btn--wa{background:var(--ok)}
+
+  /* portada / contraportada */
+  .pg--cover{align-items:center;justify-content:center;text-align:center;gap:14px;padding:12%;
+    background:linear-gradient(150deg,rgba(255,255,255,.04),rgba(0,0,0,.34)),
+      repeating-linear-gradient(118deg,#1a1713 0 2px,#211d18 2px 5px),#181510;
+    border:1px solid rgba(138,115,89,.4);color:var(--bone)}
+  .pg--cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(138,115,89,.4);pointer-events:none}
+  .pg__t{position:relative;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(233,228,218,.55)}
+  .pg__clogo{position:relative;width:52%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.5))}
+  .pg__ctitle{position:relative;font-family:var(--serif);letter-spacing:.14em;color:var(--bronze-l);margin:0;font-size:clamp(1.5rem,5vw,2.4rem)}
+  .pg__ctag{position:relative;font-family:var(--serif);font-style:italic;color:rgba(233,228,218,.82);font-size:.85rem;margin:0}
+  .pg__cline{position:relative;width:54px;height:1px;background:var(--bronze-l);margin:4px 0}
+  .pg__cinfo{position:relative;font-size:.78rem;line-height:1.7;color:rgba(233,228,218,.9);margin:0}
+  .pg--blank{background:var(--paper)}
+
+  .controls{display:flex;align-items:center;gap:18px;color:var(--bone)}
+  .controls button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-d);background:none;
+    color:var(--bronze-l);font-size:1.1rem;cursor:pointer;transition:.2s}
+  .controls button:hover:not(:disabled){background:var(--bronze);color:#fff;border-color:var(--bronze)}
+  .controls button:disabled{opacity:.3;cursor:default}
+  #counter{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-soft);min-width:120px;text-align:center}
+  .hint{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(154,145,132,.6)}
+
+  @media(max-width:820px){
+    .book3d{width:94vw;aspect-ratio:3/4}
+    #book{left:0}#book.at-start,#book.at-end{transform:none}
+    .leaf{left:0;width:100%}.face--front{box-shadow:none}
+    .cat-top{padding:12px 16px}.cat-top img{height:34px}
+  }
+</style>
+</head>
+<body>
+
+<div class="cat-top">
+  <a href="index.html">← Volver</a>
+  <img src="assets/img/logo-horizontal-light.svg" alt="GV MÁRMOL">
+  <a href="https://wa.me/593988007005?text=Hola%20GV%20M%C3%81RMOL%2C%20vi%20el%20cat%C3%A1logo." target="_blank" rel="noopener">WhatsApp →</a>
+</div>
+
+<div class="stage">
+  <div class="book-wrap">
+    <div class="book3d"><div id="book"></div></div>
+    <div class="controls">
+      <button id="prev" aria-label="Anterior">‹</button>
+      <span id="counter">Portada</span>
+      <button id="next" aria-label="Siguiente">›</button>
+    </div>
+    <span class="hint">Toca los bordes del libro o usa las flechas del teclado</span>
+  </div>
+</div>
+
+<div class="fab">
+  <a class="fab-wa" href="https://wa.me/593988007005?text=Hola%20GV%20M%C3%81RMOL%2C%20quisiera%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.3.4c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.8 1.7.3.1.5.1.7-.1l.9-1.1c.2-.3.5-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<script src="assets/js/catalog.js"></script>
+</body>
+</html>
